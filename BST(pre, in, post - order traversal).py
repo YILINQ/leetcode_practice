@@ -37,3 +37,19 @@ class Solution:
                 visited.add(current)
                 current = root
         return result
+
+    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        result = []
+        current = root
+        stack = []
+        while True:
+            if current:
+                stack.append(current)
+                result.append(current.val)
+                current = current.left
+            elif stack != []:
+                current = stack.pop()
+                current = current.right
+            else:
+                break
+        return result
