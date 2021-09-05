@@ -28,7 +28,7 @@ class Solution:
 
     # still TLE, try prefix sum
     # keep left and right for each end
-    # update k + 1 times
+    # update k + 1 times, faster than 99%
     def maxScore_3(self, cardPoints: List[int], k: int) -> int:
         if k == len(cardPoints):
             return sum(cardPoints)
